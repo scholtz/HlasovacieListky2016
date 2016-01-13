@@ -34,6 +34,21 @@ if ($handle) {
 file_put_contents("out01.txt",implode("\n",$lines));
 
 	$fp = fopen('out.csv', 'w');
+	
+	$fields = array();
+	$fields[] = "cislo strany";// cislo strany
+	$fields[] = "nazov strany";// nazov strany
+	$fields[] = "cislo kandidata";// cislo kandidata
+
+	$fields[] = "meno";// menokandidata
+	$fields[] = "priezvisko";// menokandidata
+	$fields[] = "tituly";// tituly oddelene bodkociarkou
+	$fields[] = "vek";// vek v rokoch
+	$fields[] = "povolania";// prace oddelene bodkociarkou
+	$fields[] = "mesto";// mesto
+
+	
+	fputcsv($fp, $fields);
 
 foreach($lines as $line){
 	$data = explode(",",$line);
